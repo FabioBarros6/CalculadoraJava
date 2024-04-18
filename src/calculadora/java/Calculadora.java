@@ -14,39 +14,39 @@ public class Calculadora {
   
     public static void main(String[] args) {
         
-        
+        Operacoes calculo = new Operacoes();
         Scanner teclado = new Scanner(System.in); //criação do objeto teclado para poder receber os numeros a serem calculados 
         System.out.println("Digite o primeiro valor: ");
         double num1 = teclado.nextDouble();
         System.out.println("Digite o segundo valor: ");
         double num2 = teclado.nextDouble();
-        System.out.println("Infome a operacao: + | - | / | *");
+        System.out.println("Infome a operacao: | + | - | / | * |");
         String operacao = teclado.next();
         double resultado;
         
         // estrutura condicional que realiza o calculo de acordo com a operação informada.
         switch (operacao){
             case "+":
-                operacao = "soma";
-                resultado = num1 + num2;
+                operacao = " + ";
+                resultado = calculo.soma(num1, num2);
                 break;
             case "-":
-                operacao = "subtracao";
-                resultado = num1 - num2;
+                operacao = " - ";
+                resultado = calculo.subtracao(num1, num2);
                 break;
             case "/":
-                operacao = "divisao";
-                resultado = num1 / num2;
+                operacao = " / ";
+                resultado = calculo.divisao(num1, num2);
                 break;
             case "*":
-                operacao = "multiplicacao";
-                resultado = num1 * num2;
+                operacao = " x ";
+                resultado = calculo.multiplicacao(num1, num2);
                 break;
             default:
                 System.out.println("Operacao inválida!");
                 return;
 
         }
-        System.out.println("O resultado da " + operacao + " e " + resultado);
+        System.out.println(num1 + operacao + num2 + " = " + resultado);
     }
 }
