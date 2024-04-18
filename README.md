@@ -1,0 +1,2 @@
+O propósito desse projeto é aplicar os conceitos de lógica de programação em Java que aprendi no decorrer dos cursos e estudos que fiz. E a medida que for avançando nos estudos irei aplicar novas funcionalizades a calculadora, e aplicar os conceitos mais avançados da programção como orientação a objetos.
+Inicialmente nessa primeira versão a calculadora realiza apenas as quatro operações básicas de forma simples, com uma única classe criada e todos os comandos sendo executados no método main.
