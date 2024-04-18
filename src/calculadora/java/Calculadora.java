@@ -13,40 +13,37 @@ import java.util.Scanner;
 public class Calculadora {
   
     public static void main(String[] args) {
+        String opcao;
+        System.out.println("==============================================");
+        System.out.println("Escolha uma opcao para Iniciar a calculadora:");
+        System.out.println("[1] - Calculadora Basica");
+        System.out.println("[2] - Calculadora Cientifica");
+        System.out.println("[3] - Sair");
+        System.out.println("==============================================");
         
-        Operacoes calculo = new Operacoes();
-        Scanner teclado = new Scanner(System.in); //criação do objeto teclado para poder receber os numeros a serem calculados 
-        System.out.println("Digite o primeiro valor: ");
-        double num1 = teclado.nextDouble();
-        System.out.println("Digite o segundo valor: ");
-        double num2 = teclado.nextDouble();
-        System.out.println("Infome a operacao: | + | - | / | * |");
-        String operacao = teclado.next();
-        double resultado;
         
-        // estrutura condicional que realiza o calculo de acordo com a operação informada.
-        switch (operacao){
-            case "+":
-                operacao = " + ";
-                resultado = calculo.soma(num1, num2);
+        Scanner teclado = new Scanner(System.in);
+        CalculadoraBasica basica = new CalculadoraBasica();
+        CalculadoraCientifica cientifica = new CalculadoraCientifica();
+        opcao = teclado.next();
+        
+        switch (opcao){
+            case "1":
+                System.out.println("=== Calculadora Basica ===");
+                basica.apresentarOperacoes();
                 break;
-            case "-":
-                operacao = " - ";
-                resultado = calculo.subtracao(num1, num2);
+            case "2":
+                System.out.println("=== Calculadora Cientifica ===");
+                cientifica.apresentarOperacoes();
                 break;
-            case "/":
-                operacao = " / ";
-                resultado = calculo.divisao(num1, num2);
-                break;
-            case "*":
-                operacao = " x ";
-                resultado = calculo.multiplicacao(num1, num2);
+            case "3":
+                System.out.println("Saindo ...");
                 break;
             default:
-                System.out.println("Operacao inválida!");
+                System.out.println("Opcao Invalida.");
                 return;
-
+            
         }
-        System.out.println(num1 + operacao + num2 + " = " + resultado);
+             
     }
 }
